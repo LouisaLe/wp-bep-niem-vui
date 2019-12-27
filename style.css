@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Bep Niem Vui
+Author: Bep Niem Vui 
+Author URI: https://bepniemvui.com/
+Description: Theme for food blog
+Version: 1.0
+Text Domain: bepniemvui
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+a:hover {
+    font-family: initial;
+    text-decoration: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+.top-navbar {
+    background-color: #e8e8ee;
+}
+
+.top-navbar__border {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    height: 35px;
+    align-items: center;
+}
+
+.top-navbar li {
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.network-block {
+    margin-left: auto;
+}
+
+.logo-wrapper {
+    display: block;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.logo {
+    font-family: 'utm-yentu', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.slogan {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.menu {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.5px solid #cccccc;
+    border-bottom: 0.5px solid #cccccc;
+    margin-bottom: 25px;
+}
+
+.menu-item {
+    margin: 0 15px;
+}
+
+.slick-slide {
+    position: relative;
+}
+
+.text-on-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.text-on-slide:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.section-label {
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.section-label::after {
+    content: '';
+    width: 300px;
+    height: 0.5px;
+    background-color: #000000;
+    left: 50;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#mainContainer {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content__wrapper {
+    margin-right: 25px;
+    width: calc(100% - 300px);
+}
+
+.sidebar__wrapper {
+    width: 300px;
+    min-width: 300px;
+}
+
+.item-descr {
+    margin: 10px 0;
+}
+
+.btn-readmore {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: #66ccff;
+    color: #ffffff;
+    border-radius: 4px;
+}
