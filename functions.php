@@ -1,3 +1,4 @@
+
 <?php
 /** @Khai bao hang gia tri
  * @ THEME_URI = lay duong dan thu muc theme
@@ -13,9 +14,11 @@
 
  /** Thiet lap chieu rong noi dung */
 
- if (!isset($content_width)) {
-     $content_width = 620;
- }
+ add_filter('use_block_editor_for_post', '__return_false');
+
+//  if (!isset($content_width)) {
+//      $content_width = 620;
+//  }
 
  /**
   * Khai bao chuc nang cho theme
@@ -94,6 +97,24 @@ if (!function_exists('get_thumbnail'))  {
 }
 
 function custom_excerpt_length( $length ) {
-    return 40;
+    return 30;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// search autocomplete
+add_action('wp_ajax_Post_filters', 'Post_filters');
+	add_action('wp_ajax_nopriv_Post_filters', 'Post_filters');
+	function Post_filters() {
+	    if(isset($_POST['data'])){
+		    $data = $_POST['data']; // nhận dữ liệu từ client
+		    echo '<ul>';
+		    $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=10&s='.$data);
+		    global $wp_query; $wp_query->in_the_loop = true;
+		    while ($getposts->have_posts()) : $getposts->the_post();
+		        echo '<li><a target="_blank" href="'.get_the_permalink().'">'.get_the_title().'</a></li>'; 
+		    endwhile; wp_reset_postdata();
+		    echo '</ul>';
+		    die(); 
+	    }
+	}
+

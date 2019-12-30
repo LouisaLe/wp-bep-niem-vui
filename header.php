@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" charset="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/slick-theme.css"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css" media="screen" />
@@ -16,14 +17,26 @@
 			<div class="top-navbar">
 				<div class="top-navbar__border">
 					<ul class="common-info">
-						<li>About</li>
-						<li>Privacy Policy</li>
-						<li>Contact</li>
+						<li>
+							<a href="<?php echo home_url() . '/about'; ?>" target="_blank">Về Bếp Niềm Vui</a>
+						</li>
+						<li>
+							<a href="<?php echo home_url() . '/policy'; ?>" target="_blank">Chính sách bảo mật</a>
+						</li>
+						<li>
+							<a href="<?php echo home_url() . '/contact'; ?>" target="_blank">Liên hệ</a>
+						</li>
 					</ul>
 					<ul class="network-block">
-						<li>Facebook</li>
-						<li>Inst</li>
-						<li>Youtube</li>
+						<li><a href="<?php echo home_url() . '/contact'; ?>" target="_blank">
+							<img src="<?php bloginfo('template_directory'); ?>/img/icon-facebook.png" title="Facebook" alt="Facebook">
+						</a></li>
+						<li><a href="https://www.pinterest.com/khuvuonniemvui/ ?>" target="_blank">
+							<img src="<?php bloginfo('template_directory'); ?>/img/icon-pinterest.png" title="Pinterest" alt="Pinterest">
+						</a></li>
+						<li><a href="<?php echo home_url() . '/contact'; ?>" target="_blank">
+							<img src="<?php bloginfo('template_directory'); ?>/img/icon-instagam.png"title="Instagram"  alt="Instagram">
+						</a></li>
 					</ul>
 				</div>
 			</div>

@@ -17,5 +17,8 @@ $(document).ready(function() {
         adaptiveHeight: true,
         autoplay: true,
         autoplaySpeed: 2000,
+        centerMode: true,
+        variableWidth: true,
+        variableHeight: true
     });
 });
