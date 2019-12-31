@@ -47,7 +47,7 @@
 
        <section id="thucdon" class="section__wrapper">
             <div class="section-label">Thực đơn nổi bật</div>
-            <div id="slideSection" class="">
+            <div id="slideSection" class="slides__wrapper">
                 <?php
                     $args = array(
                         'category_name' => 'thuc-don',
@@ -64,8 +64,6 @@
                                 </a>
                                 <div class="item-content__wrapper">
                                     <a href="<?php the_permalink() ?>" class="item-title"><?php the_title() ?></a>
-                                    <div class="item-descr"><?php the_excerpt() ?></div>
-                                    <a href="<?php the_permalink() ?>" class="btn-readmore">Đọc thêm</a>
                                 </div>
                             </div>
                         <?php
