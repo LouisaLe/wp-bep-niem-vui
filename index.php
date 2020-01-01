@@ -75,34 +75,36 @@
        </section>
        <section id="anodau" class="section__wrapper">
             <div class="section-label">Ăn ở đâu</div>
-            <?php
-                $args = array(
-                    'category_name' => 'an-o-dau',
-                );
-                $q = new WP_Query( $args);
-                
-                if ( $q->have_posts() ) {
-                    while ( $q->have_posts() ) {
-                    $q->the_post();
-                    ?>
-                        <div class="item item__wrapper">
-                            <a href="<?php the_permalink() ?>" class="item-img__wrapper">
-                                <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
-                            </a>
-                            <div class="item-content__wrapper">
-                                <a href="<?php the_permalink() ?>" class="item-title"><?php the_title() ?></a>
-                                <div class="item-descr"><?php the_excerpt() ?></div>
-                                <a href="<?php the_permalink() ?>" class="btn-readmore">Đọc thêm</a>
+            <div class="item-list__wrapper">
+                <?php
+                    $args = array(
+                        'category_name' => 'an-o-dau',
+                    );
+                    $q = new WP_Query( $args);
+                    
+                    if ( $q->have_posts() ) {
+                        while ( $q->have_posts() ) {
+                        $q->the_post();
+                        ?>
+                            <div class="item">
+                                <div class="item__wrapper">
+                                    <a href="<?php the_permalink() ?>" class="item-img__wrapper">
+                                        <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
+                                    </a>
+                                    <div class="item-content__wrapper">
+                                        <a href="<?php the_permalink() ?>" class="item-title"><?php the_title() ?></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    <?php
+                        <?php
+                        }
+                        wp_reset_postdata();
                     }
-                    wp_reset_postdata();
-                }
-            ?>
+                ?>
+            </div>
        </section>
 
-       <section id="anodau" class="section__wrapper">
+       <section id="khoedep" class="section__wrapper">
             <div class="section-label">Khỏe - Đẹp - Mẹo vặt</div>
             <?php
                 $args = array(

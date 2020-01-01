@@ -212,7 +212,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     
     #mainContainer {
         display: flex;
-        width: 90%;
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
         padding: 25px;
@@ -238,8 +238,19 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .sidebar__border.flex {
         position: fixed;
         top: 35px;
+        right: 0;
         height: 90vh;
         overflow: auto;
+    }
+    
+    .sidebar__border.flex::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: none;
+    }
+    
+    .sidebar__border.flex::-webkit-scrollbar {
+        width: 5px;
+        background-color: none;
     }
     
     ul.item-list__wrapper {
@@ -324,9 +335,12 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         width: 100px;
         padding: 10px;
         text-align: center;
-        background-color: #66ccff;
-        color: #ffffff;
-        border-radius: 4px;
+        border: 1px solid #cccccc;
+    }
+    
+    .item-content__wrapper {
+        font-size: 18px;
+        font-weight: 700;
     }
     
     #monngon .item__wrapper {
@@ -370,4 +384,25 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         text-align: center;
         overflow: auto;
         text-transform: capitalize;
+        display: flex;
+        align-items: center;
+    }
+    
+    #anodau .item-list__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    #anodau .item {
+        width: calc(100% / 3);
+        align-self: stretch;
+    }
+    
+    #anodau .item__wrapper {
+        margin: 10px 10px 10px 0;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    }
+    
+    #anodau .item-content__wrapper {
+        padding: 8px;
     }
