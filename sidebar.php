@@ -41,28 +41,29 @@
         
         <div class="sidebar-label">Chuyên mục</div>
         <div class="sidebar-content__wrapper">
+        <ul class="category-list__wrapper">
             <?php
-                $terms = get_terms( array(
-                    'post_type' => 'new_post',
-                    'taxonomy' => 'chuyen_muc'
-                ) );
-
-                // $terms = array_reverse($terms);
-
-                $count = count($terms);
-                if ($count > 0) {
-                    foreach ($terms as $term) {
-                        echo '<a href="'. home_url() . '/' . $term->slug . '">'.$term->name.'</a> / ';
-                    }
-                }
-            ?>
+            $args = array(
+                'child_of'  => 0,
+                '<strong>orderby</strong>'    => 'id',
+            );
+            $categories = get_categories( $args );
+            foreach ( $categories as $category ) { ?>
+            <li>
+            <a href="<?php echo get_term_link($category->slug, 'category');?>">
+                <?php echo $category->name; ?>
+                <span><?php echo '['.$category->count.']'; ?></span>
+            </a>
+            </li>
+            <?php } ?>
+            </ul>
         </div>
 
         <div class="sidebar-label">Fanpage Facebook</div>
         <div class="sidebar-content__wrapper">
             <div class="fb-page" data-href="https://www.facebook.com/B%E1%BA%BFp-Ni%E1%BB%81m-Vui-110486483646795" data-tabs="timeline" data-width="280" data-height="300" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/B%E1%BA%BFp-Ni%E1%BB%81m-Vui-110486483646795" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/B%E1%BA%BFp-Ni%E1%BB%81m-Vui-110486483646795">Bếp Niềm Vui</a></blockquote></div>
         </div>
-
+        
         <div class="sidebar-label">Tags</div>
         <div class="sidebar-content__wrapper"></div>
     </div>

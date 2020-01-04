@@ -19,6 +19,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         src: url(../bepniemvui/css/fonts/UVNConThuy.TTF);
     }
     
+    #footer {
+        text-align: center;
+        font-size: 13px;
+        background-color: #000000;
+        color: #ffffff;
+        padding: 8px 0;
+    }
+    
     html,
     body {
         margin: 0;
@@ -41,7 +49,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .page__wrapper {
         width: 90%;
         margin: 0 auto;
-        padding: 0 25px 25px;
+        padding: 0 25px 0 25px;
     }
     
     p {
@@ -213,9 +221,8 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     #mainContainer {
         display: flex;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 25px;
     }
     
     .content__wrapper {
@@ -226,7 +233,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .sidebar__wrapper {
         width: 300px;
         min-width: 300px;
-        margin-right: 30px;
+        margin-left: auto;
     }
     
     .sidebar__border {
@@ -237,10 +244,13 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     
     .sidebar__border.flex {
         position: fixed;
+        width: 300px;
         top: 35px;
         right: 0;
         height: 90vh;
         overflow: auto;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        background-color: #ffffff;
     }
     
     .sidebar__border.flex::-webkit-scrollbar-track {
@@ -328,6 +338,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .item-descr {
         margin: 10px 0;
         font-size: 15px;
+        font-weight: 300;
     }
     
     .btn-readmore {
@@ -336,6 +347,12 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         padding: 10px;
         text-align: center;
         border: 1px solid #cccccc;
+        font-weight: 100;
+        font-size: 16px;
+    }
+    
+    .btn-readmore:hover {
+        color: #dddddd;
     }
     
     .item-content__wrapper {
@@ -343,23 +360,31 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         font-weight: 700;
     }
     
-    #monngon .item__wrapper {
+    #monngon .item__wrapper,
+    #khoedep .item__wrapper {
         display: flex;
     }
     
-    #monngon .item-img__wrapper {
+    #monngon .item-img__wrapper,
+    #khoedep .item-img__wrapper {
         flex: 0 0 300px;
         margin-bottom: 20px;
     }
     
-    #monngon .item-title {
+    .item-title {
+        text-transform: capitalize;
+    }
+    
+    #monngon .item-title,
+    #khoedep .item-title {
         color: inherit;
         font-family: inherit;
         font-weight: bold;
         font-size: 18px;
     }
     
-    #monngon .item-content__wrapper {
+    #monngon .item-content__wrapper,
+    #khoedep .item-content__wrapper {
         margin-left: 20px;
     }
     
@@ -394,15 +419,36 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     }
     
     #anodau .item {
-        width: calc(100% / 3);
-        align-self: stretch;
-    }
-    
-    #anodau .item__wrapper {
-        margin: 10px 10px 10px 0;
+        width: calc(100% / 4 - 20px);
         box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        margin: 10px;
     }
     
     #anodau .item-content__wrapper {
         padding: 8px;
+    }
+    
+    .footer-content__wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .recent-post__wrapper {
+        margin-right: 25px;
+    }
+    
+    .btn-top {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        bottom: 80px;
+        right: 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    #btnTop.hidden {
+        display: none;
     }

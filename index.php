@@ -21,6 +21,8 @@
             <?php
                 $args = array(
                     'category_name' => 'mon-ngon',
+                    'posts_per_page' => 5
+                    
                 );
                 $q = new WP_Query( $args);
                 
@@ -51,6 +53,7 @@
                 <?php
                     $args = array(
                         'category_name' => 'thuc-don',
+                        'posts_per_page' => 5
                     );
                     $q = new WP_Query( $args);
                     
@@ -74,11 +77,12 @@
             </div>
        </section>
        <section id="anodau" class="section__wrapper">
-            <div class="section-label">Ăn ở đâu</div>
+            <div class="section-label">Ăn gì? Ở đâu</div>
             <div class="item-list__wrapper">
                 <?php
                     $args = array(
                         'category_name' => 'an-o-dau',
+                        'posts_per_page' => 8
                     );
                     $q = new WP_Query( $args);
                     
@@ -108,7 +112,8 @@
             <div class="section-label">Khỏe - Đẹp - Mẹo vặt</div>
             <?php
                 $args = array(
-                    'category_name' => 'khoe-dep',
+                    'category__in' => array(8, 10),
+                    'posts_per_page' => 5
                 );
                 $q = new WP_Query( $args);
                 
@@ -132,6 +137,7 @@
                 }
             ?>
        </section>
+       <?php get_footer('instagram'); ?>
     </div>
     <?php get_sidebar(); ?>
 </div>

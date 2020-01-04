@@ -14,7 +14,7 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 2,
         adaptiveHeight: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
     });
 
@@ -27,5 +27,21 @@ $(document).ready(function() {
         } else {
             $('.sidebar__border').removeClass('flex');
         }
+
+        if (scroll >= $('#footer').offset().top - $(window).height()) {
+            $('.sidebar__border').removeClass('flex');
+            $('#btnTop').removeClass('hidden');
+        } else {
+            $('#btnTop').addClass('hidden');
+        }
     });
+
+    var maxHeight = 0;
+
+    $("#anodau .item-list__wrapper .item").each(function() {
+        if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+    });
+
+    $("#anodau .item-list__wrapper .item").height(maxHeight);
+
 });
