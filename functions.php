@@ -69,9 +69,7 @@ if (!function_exists('bnv_menu'))  {
 
 if (!function_exists('bnv_pagination'))  {
     function bnv_pagination() {
-        if ($GLOBALS['wp_query']->max_num_pages < 2) {
-            return '';
-        } ?>
+        ?>
         <nav class="pagination">
             <?php if (get_next_posts_link()) : ?>
                 <div class="prev">

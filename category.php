@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="mainContainer" class="main-container">
+<div id="mainContainer" class="main-container page-list-all">
     <div class="content__wrapper">
         <!-- Breadcrumb code -->
         <?php
@@ -8,11 +8,11 @@
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
             }
         ?>
-        <?php if (get_query_var('cat') == 26)
+        <!-- <?php if (get_query_var('cat') == 26)
             echo get_cat_name(get_query_var('cat'));
-        ?>
+        ?> -->
 
-    <?php if (is_category( )) {
+    <!-- <?php if (is_category( )) {
         $thiscat = get_category( get_query_var( 'cat' ) );
         $catid = $thiscat->cat_ID;
         //create array from get_category_parents
@@ -30,17 +30,19 @@
             ) );
             //check if current category is parent category
             if ( $catid == $parent ) {
-                echo '<span>this is a parent category page</span>';
-                echo count($catlist);
+                // echo '<span>this is a parent category page</span>';
+                // echo count($catlist);
                 foreach($catlist as $cat) { 
-                    echo $cat->name;
+                    echo $cat->name;?>
+                    <a href="<?php echo get_term_link($cat->slug, 'category');?>">
+                    <?php
                 }
             }
             else {
-                echo '<span>this is a child category page</span>';
+                // echo '<span>this is a child category page</span>';
             }
         }
-    ?>
+    ?> -->
     <!-- Get post mặt định -->
         <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -59,6 +61,23 @@
             <p>Không có bài viết nào!</p>
         <?php endif; ?>
     <!-- Get post mặt định -->
+
+    <?php if(paginate_links()!='') {?>
+        <div class="pagination">
+            <?php
+            global $wp_query;
+            $big = 999999999;
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'prev_text'    => __('« Mới hơn'),
+                'next_text'    => __('Tiếp theo »'),
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $wp_query->max_num_pages
+                ) );
+            ?>
+        </div>
+    <?php } ?>
     </div>
     <?php get_sidebar(); ?>
 </div>
