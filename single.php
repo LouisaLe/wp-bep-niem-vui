@@ -45,7 +45,7 @@
         <?php while (have_posts()) : the_post(); ?>
             <div class="post--detail__wrapper">
 
-                <div class="item-title"><?php the_title(); ?></div>
+                <h1 class="item-title"><?php the_title(); ?></h1>
                 <div class="posted-date">Ngày đăng: <?php the_date(); ?></div>
 
                 <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>

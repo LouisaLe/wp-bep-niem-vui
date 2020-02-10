@@ -101,18 +101,32 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // search autocomplete
 add_action('wp_ajax_Post_filters', 'Post_filters');
-	add_action('wp_ajax_nopriv_Post_filters', 'Post_filters');
-	function Post_filters() {
-	    if(isset($_POST['data'])){
-		    $data = $_POST['data']; // nhận dữ liệu từ client
-		    echo '<ul>';
-		    $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=10&s='.$data);
-		    global $wp_query; $wp_query->in_the_loop = true;
-		    while ($getposts->have_posts()) : $getposts->the_post();
-		        echo '<li><a target="_blank" href="'.get_the_permalink().'">'.get_the_title().'</a></li>'; 
-		    endwhile; wp_reset_postdata();
-		    echo '</ul>';
-		    die(); 
-	    }
-	}
+add_action('wp_ajax_nopriv_Post_filters', 'Post_filters');
+function Post_filters() {
+    if(isset($_POST['data'])){
+        $data = $_POST['data']; // nhận dữ liệu từ client
+        echo '<ul>';
+        $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=10&s='.$data);
+        global $wp_query; $wp_query->in_the_loop = true;
+        while ($getposts->have_posts()) : $getposts->the_post();
+            echo '<li><a target="_blank" href="'.get_the_permalink().'">'.get_the_title().'</a></li>'; 
+        endwhile; wp_reset_postdata();
+        echo '</ul>';
+        die(); 
+    }
+}
+
+// for custom single template for specifical category
+add_filter('single_template', 'check_for_category_single_template');
+function check_for_category_single_template( $t ) {
+    foreach( (array) get_the_category() as $cat ) { 
+        if ( file_exists(get_stylesheet_directory() . "/single-{$cat->slug}.php") ) return get_stylesheet_directory() . "/single-{$cat->slug}.php"; 
+        if($cat->parent)
+        {
+            $cat = get_the_category_by_ID( $cat->parent );
+            if ( file_exists(get_stylesheet_directory() . "/single-{$cat->slug}.php") ) return get_stylesheet_directory() . "/single-{$cat->slug}.php";
+        }
+    } 
+    return $t;
+}
 

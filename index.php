@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 <div id="mainContainer" class="main-container">
     <div class="content__wrapper">
-        <div id="sliderHome">
-        <!-- Slider -->
-        <!-- Get post News Query -->
-        <?php $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=3&post_type=slider'); ?>
-        <?php global $wp_query; $wp_query->in_the_loop = true; ?>
-        <?php while ($getposts->have_posts()) : $getposts->the_post(); ?>
-            <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
-            <a href="<?php the_permalink() ?>" target="_blank" class="slick-item">
-                <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
-                <div class="text-on-slide"><?php the_title() ?></div>
-            </a>
-        <?php endwhile; wp_reset_postdata(); ?>
-        <!-- Get post News Query -->
-        </div>
+		<div id="sliderHome">
+		<!-- Slider -->
+		<!-- Get post News Query -->
+		<?php $getposts = new WP_query(); $getposts->query('post_status=publish&showposts=3&post_type=slider'); ?>
+		<?php global $wp_query; $wp_query->in_the_loop = true; ?>
+		<?php while ($getposts->have_posts()) : $getposts->the_post(); ?>
+			<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
+			<a href="<?php echo home_url() . '/mon-ngon'; ?>" target="_blank" class="slick-item">
+				<img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
+				<div class="text-on-slide"><?php the_title() ?></div>
+			</a>
+		<?php endwhile; wp_reset_postdata(); ?>
+		<!-- Get post News Query -->
+	</div>
         <section id="monngon" class="section__wrapper">
             <div class="section-label">Món ăn ngon</div>
             <?php
@@ -65,6 +65,7 @@
                         while ( $q->have_posts() ) {
                         $q->the_post();
                         ?>
+                            <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                             <div class="item item__wrapper">
                                 <a href="<?php the_permalink() ?>" class="item-img__wrapper">
                                     <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
@@ -101,6 +102,7 @@
                         while ( $q->have_posts() ) {
                         $q->the_post();
                         ?>
+                            <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                             <div class="item">
                                 <div class="item__wrapper">
                                     <a href="<?php the_permalink() ?>" class="item-img__wrapper">
@@ -135,6 +137,7 @@
                     while ( $q->have_posts() ) {
                     $q->the_post();
                     ?>
+                        <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                         <div class="item item__wrapper">
                             <a href="<?php the_permalink() ?>" class="item-img__wrapper">
                                 <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
@@ -151,7 +154,7 @@
                 }
             ?>
 
-<?php
+            <?php
                 $args = array(
                     'category_name' => 'meo-vat',
                     'posts_per_page' => 3
@@ -162,6 +165,7 @@
                     while ( $q->have_posts() ) {
                     $q->the_post();
                     ?>
+                        <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                         <div class="item item__wrapper">
                             <a href="<?php the_permalink() ?>" class="item-img__wrapper">
                                 <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>

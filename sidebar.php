@@ -2,7 +2,7 @@
     <div class="sidebar__border">
         <div class="main-search sidebar-content__wrapper">
             <form action="<?php bloginfo('url'); ?>/" method="GET" role="form" id="searchform" class="search-form">
-                <input type="text" autocomplete="off" class="form-control search-ajax" name="s" placeholder="Hôm nay ăn gì?">
+                <input type="text" autocomplete="off" class="form-control search-ajax typewriter" name="s" placeholder="Hôm nay ăn gì?">
                 <button type="submit">
                     <img src="<?php bloginfo('template_directory'); ?>/img/icon-search.png" alt="Search">
                 </button>

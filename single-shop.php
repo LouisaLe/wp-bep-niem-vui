@@ -1,0 +1,1 @@
+<div>Single shop</div>

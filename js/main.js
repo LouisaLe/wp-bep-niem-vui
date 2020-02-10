@@ -5,7 +5,8 @@ $(document).ready(function() {
         slidesToShow: 1,
         adaptiveHeight: true,
         autoplay: true,
-        autoplaySpeed: 2000,
+        fade: true,
+        autoplaySpeed: 3000,
         prevArrow: "<div class='btn-control btn-next'></div>",
         nextArrow: "<div class='btn-control btn-previous'></div>"
     });
@@ -15,26 +16,36 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 1,
         adaptiveHeight: true,
-        autoplay: false,
+        autoplay: true,
+        fade: true,
         autoplaySpeed: 2000,
     });
 
     var hieghtThreshold = $(".sidebar__border").offset().top + $(".sidebar__border").height();
+
+    var offsetMenu = $('#pmenu').offset().top;
+
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-        // if (scroll >= hieghtThreshold) {
-        //     $('.sidebar__border').addClass('flex');
-        // } else {
-        //     $('.sidebar__border').removeClass('flex');
-        // }
-
         if (scroll >= $('#footer').offset().top - $(window).height()) {
-            // $('.sidebar__border').removeClass('flex');
             $('#btnTop').removeClass('hidden');
         } else {
             $('#btnTop').addClass('hidden');
         }
+
+
+
+        if (scroll >= offsetMenu) {
+            if (!$('#pmenu').hasClass('fixed')) {
+                $('#pmenu').addClass('fixed');
+                $('.menu-item-has-children').children('.sub-menu').css('top', 50);
+            }
+        } else {
+            $('#pmenu').removeClass('fixed');
+            $('.menu-item-has-children').children('.sub-menu').css('top', (offsetMenu - scroll) + 25);
+        }
+
     });
 
     var maxHeight = 0;
@@ -57,5 +68,24 @@ $(document).ready(function() {
     $('.menu-ico').click(function() {
         $('.menu-style').toggleClass('active');
         $('.primary-menu').toggleClass('active');
+    });
+
+    // $('.menu-item-has-children').hover(
+    //     function() {
+    //         $(this).children('.sub-menu').css('top', offsetMenuDynamic + 50);
+    //         $(this).addClass('hover');
+    //     },
+    //     function() { $(this).removeClass('hover'); }
+    // );
+
+
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+
+    $(window).resize(function() {
+        if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
+            location.reload();
+            return;
+        }
     });
 });

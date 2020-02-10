@@ -8,6 +8,10 @@
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
             }
         ?>
+        <div class="getting__category">
+            <?php
+                echo 'Chọn gì cho tốt là chuyên mục review kinh nghiệm mua sản phẩm tốt. Một ngày tốt lành!';
+            ?>
 
         </div>
 

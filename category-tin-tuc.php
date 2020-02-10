@@ -8,6 +8,10 @@
             yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
             }
         ?>
+        <div class="getting__category">
+            <?php
+                echo 'Bạn nên biết là chuyên mục của đi và ăn. Một ngày tốt lành!';
+            ?>
 
         </div>
 
