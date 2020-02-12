@@ -21,7 +21,7 @@
         </div>
         <div class="footer-content__item category__wrapper">
             <div class="footer__label">Chuyên mục</div>
-            <ul class="item-list__wrapper">
+            <ul class="category-list__wrapper item-list__wrapper">
                 <?php
                 $args = array(
                     'child_of'  => 0,

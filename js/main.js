@@ -70,14 +70,9 @@ $(document).ready(function() {
         $('.primary-menu').toggleClass('active');
     });
 
-    // $('.menu-item-has-children').hover(
-    //     function() {
-    //         $(this).children('.sub-menu').css('top', offsetMenuDynamic + 50);
-    //         $(this).addClass('hover');
-    //     },
-    //     function() { $(this).removeClass('hover'); }
-    // );
-
+    $('.mobi-search__toggle').click(function() {
+        $('.main-search').toggleClass('fixed');
+    });
 
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();

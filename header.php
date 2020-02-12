@@ -51,6 +51,12 @@
 		</div>
 		<div id="pmenu" class="menu-custom__wrapper">
 				<div class="mobile-menu__icon">
+					<div class="home">
+						<div class="icon-home">
+							<a href="<?php echo home_url() ?>" title="home"></a>
+						</div>
+					</div>
+					<div class="mobi-search__toggle"></div>
 					<div class="menu-ico menu-style"><span></span></div>
 				</div>
 				<?php bnv_menu('primary-menu'); ?>

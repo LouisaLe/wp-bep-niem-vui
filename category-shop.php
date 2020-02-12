@@ -5,12 +5,16 @@
         <!-- Breadcrumb code -->  
         <div class="search-header__wrapper">
             <div class="main-search sidebar-content__wrapper">
+                <div class="icon-home">
+                    <a href="<?php echo home_url() ?>" title="home"></a>
+                </div>
                 <form action="<?php bloginfo('url'); ?>/" method="GET" role="form" id="searchform" class="search-form">
                     <input type="text" autocomplete="off" class="form-control search-ajax typewriter" name="s" placeholder="Bạn cần tìm gì?">
                     <button type="submit">
                         <img src="<?php bloginfo('template_directory'); ?>/img/icon-search.png" alt="Search">
                     </button>
                 </form>
+
             </div>
             <ul class="tags__wrapper">
                 <li>
@@ -29,7 +33,7 @@
             <div id="load-data"></div>
         </div>
         <div class="products-list__container">
-            <section id="d_section3">
+            <section id="d_section1">
                 <div class="products-list__label">
                     Thực phẩm tốt cho sức khỏe
                 </div>
@@ -125,7 +129,7 @@
                 <div>
             </section>
 
-            <section id="d_section3">
+            <section id="d_section2">
                 <div class="products-list__label">
                     Đồ dùng bếp tiện nghi
                 </div>
