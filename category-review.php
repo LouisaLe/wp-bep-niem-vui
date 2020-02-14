@@ -10,7 +10,7 @@
         ?>
         <div class="getting__category">
             <?php
-                echo 'Chọn gì cho tốt là chuyên mục review kinh nghiệm mua sản phẩm tốt. Một ngày tốt lành!';
+                echo 'Chọn gì cho tốt là chuyên mục review kinh nghiệm mua thực phẩm, đồ dùng, hàng hóa... Giúp bạn tiết kiệm thời gian và hạnh phúc, tiện nghi hơn trong cuộc sống nội trợ. Một ngày tốt lành!';
             ?>
 
         </div>

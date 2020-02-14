@@ -10,7 +10,8 @@
         ?>
         <div class="getting__category">
             <?php
-                echo 'Bạn nên biết là chuyên mục của đi và ăn. Một ngày tốt lành!';
+                echo 'Đây là chuyên mục cung cấp thông tin về nấu ăn, kinh nghiệm sống cũng như sức khỏe, chế độ dinh dưỡng.
+                Bằng những nghiên cứu tìm tòi trong sách, nguồn đáng tin cậy, Bếp Niềm Vui mong muốn mang đến cho bạn đọc những thông tin bổ ích. Chúc bạn một ngày tốt lành!';
             ?>
 
         </div>

@@ -17,17 +17,17 @@
 
             </div>
             <ul class="tags__wrapper">
-                <li>
-                    <a id="sectionAll" href="#">All</a>
+                <li id="sectionAll">
+                    <a href="#">All</a>
                 </li>
-                <li>
-                    <a id="section1"  href="#">Thực phẩm tốt cho sức khỏe</a>
+                <li id="section1">
+                    <a id="section1" href="#">Thực phẩm tốt cho sức khỏe</a>
                 </li>
-                <li>
-                    <a id="section2" href="#">Đồ dùng bếp tiện nghi</a>
+                <li id="section2">
+                    <a href="#">Đồ dùng bếp tiện nghi</a>
                 </li>
-                <li>
-                    <a id="section3" href="#">Sách hay về nấu ăn</a>
+                <li id="section3">
+                    <a href="#">Sách hay về nấu ăn</a>
                 </li>
             </ul>
             <div id="load-data"></div>
@@ -54,11 +54,11 @@
                                 <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                                 <div class="product-item product-item__wrapper">
                                     <div class="product-item__border">
-                                        <a href="<?php the_permalink() ?>" class="product-item__feature-img">
+                                        <a href="#" class="product-item__feature-img">
                                             <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
                                         </a>
                                         <a href="<?php the_permalink() ?>" class="product-item__title"><?php the_title() ?></a>
-                                        <a href="<?php the_permalink() ?>" class="btn-product__detail">Xem chi tiết</a>
+                                        <!-- <a href="<?php the_permalink() ?>" class="btn-product__detail">Xem chi tiết</a> -->
                                         <div class="product-item__list-shops">
                                             Mua ngay giá tốt với
                                             <?php $customfield = get_post_custom();?>

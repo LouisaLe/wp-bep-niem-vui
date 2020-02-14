@@ -20,7 +20,9 @@
         <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
         <a href="<?php echo home_url() . '/mon-ngon'; ?>" target="_blank" class="slick-item">
             <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
-            <div class="text-on-slide"><?php the_title() ?></div>
+            <div class="text-on-slide">
+                <?php the_title() ?>
+            </div>
         </a>
     <?php endwhile; wp_reset_postdata(); ?>
 </div>

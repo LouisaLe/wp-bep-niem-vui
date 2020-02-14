@@ -32,21 +32,34 @@
         <div class="sidebar-label">Chuyên mục</div>
         <div class="sidebar-content__wrapper">
         <ul class="category-list__wrapper">
-            <?php
-            $args = array(
-                'child_of'  => 0,
-                '<strong>orderby</strong>'    => 'id',
-            );
-            $categories = get_categories( $args );
-            foreach ( $categories as $category ) { ?>
             <li class="item__wrapper">
-            <a href="<?php echo get_term_link($category->slug, 'category');?>">
-                <?php echo $category->name; ?>
-                <span><?php echo '['.$category->count.']'; ?></span>
-            </a>
+                <a href="<?php echo home_url().'/mon-ngon' ?>" title="Món ăn ngon">Món ăn ngon</a>
             </li>
-            <?php } ?>
-            </ul>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/an-o-dau' ?>" title="Đi đâu? Ăn gì?">Đi đâu? Ăn gì?</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/tin-tuc' ?>" title="Bạn nên biết">Bạn nên biết</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/tin-tuc/dinh-duong' ?>" title="Chế độ dinh dưỡng">Chế độ dinh dưỡng</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/tin-tuc/meo-vat' ?>" title="Kinh nghiệm, mẹo vặt">Kinh nghiệm, mẹo vặt</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/tin-tuc/khoe-dep' ?>" title="Khỏe và Đẹp">Khỏe và Đẹp</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/review' ?>" title="Chọn gì cho tốt">Chọn gì cho tốt</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/blog' ?>" title="Blog yêu thương">Blog yêu thương</a>
+            </li>
+            <li class="item__wrapper">
+                <a href="<?php echo home_url().'/shop' ?>" title="Mua sắm cho căn bếp nhà bạn">Shop with Bếp Niềm Vui</a>
+            </li>
+        </ul>
         </div>
 
         <div class="sidebar-label">Fanpage Facebook</div>

@@ -6,7 +6,7 @@ $(document).ready(function() {
         adaptiveHeight: true,
         autoplay: true,
         fade: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4200,
         prevArrow: "<div class='btn-control btn-next'></div>",
         nextArrow: "<div class='btn-control btn-previous'></div>"
     });
@@ -21,22 +21,36 @@ $(document).ready(function() {
         autoplaySpeed: 2000,
     });
 
-    var hieghtThreshold = $(".sidebar__border").offset().top + $(".sidebar__border").height();
+    // var hieghtThreshold = $(".sidebar__border").offset().top + $(".sidebar__border").height();
 
-    var offsetMenu = $('#pmenu').offset().top;
+    if ($('#pmenu').length) {
+        var offsetMenu = $('#pmenu').offset().top;
+    }
 
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-        if (scroll >= $('#footer').offset().top - $(window).height()) {
+        // if (scroll >= $('#footer').offset.top - $(window).height()) {
+        //     $('#btnTop').removeClass('hidden');
+        // } else {
+        //     $('#btnTop').addClass('hidden');
+        // }
+
+        if (scroll >= 500) {
             $('#btnTop').removeClass('hidden');
         } else {
             $('#btnTop').addClass('hidden');
         }
 
+        if (scroll >= 100) {
+            $('#shopPage').addClass('fixed-search');
+        } else {
+            $('#shopPage').removeClass('fixed-search');
+        }
 
 
-        if (scroll >= offsetMenu) {
+
+        if (offsetMenu && scroll >= offsetMenu) {
             if (!$('#pmenu').hasClass('fixed')) {
                 $('#pmenu').addClass('fixed');
                 $('.menu-item-has-children').children('.sub-menu').css('top', 50);
@@ -82,5 +96,12 @@ $(document).ready(function() {
             location.reload();
             return;
         }
+    });
+
+    $('.tags__wrapper li').click(function() {
+        var el = $(this);
+        var selectedID = el.attr('id');
+        var targetOffset = $('#d_' + selectedID).offset().top;
+        $("html, body").animate({ scrollTop: targetOffset - 180 }, 1000);
     });
 });

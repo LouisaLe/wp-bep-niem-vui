@@ -10,7 +10,9 @@
         ?>
         <div class="getting__category">
             <?php
-                echo 'Món ăn ngon là chuyên mục bao gồm những bài hướng dẫn, sưu tầm bài viết, videos nấu ăn ngon! Hãy tìm món yêu thích của bạn theo các mục chi tiết trên menu. Hoặc bạn cũng có thể tìm kiếm trong khung search, hi vọng Bếp Niềm Vui sẽ giúp bạn tìm được thứ bạn cần. Một ngày tốt lành!';
+                echo 'Món ăn ngon là chuyên mục bao gồm những bài hướng dẫn, bài viết sưu tầm, videos nấu ăn ngon!
+                 Hãy tìm món yêu thích của bạn theo các mục chi tiết trên menu. Hoặc bạn cũng có thể tìm kiếm trong khung search, 
+                hi vọng Bếp Niềm Vui sẽ giúp bạn tìm được thứ bạn cần. Chúc bạn một ngày tốt lành!';
             ?>
 
         </div>

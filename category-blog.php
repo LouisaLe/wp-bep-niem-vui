@@ -10,7 +10,7 @@
         ?>
         <div class="getting__category">
             <?php
-                echo 'Đi đâu? Ăn gì là chuyên mục của đi và ăn. Một ngày tốt lành!';
+                echo 'Blog yêu thương là nơi chia sẻ những câu chuyện, kỉ niệm về hành trình nấu ăn. Chúc bạn một ngày tốt lành!';
             ?>
 
         </div>
