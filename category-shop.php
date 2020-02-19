@@ -54,11 +54,11 @@
                                 <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
                                 <div class="product-item product-item__wrapper">
                                     <div class="product-item__border">
-                                        <a href="#" class="product-item__feature-img">
+                                        <a href="<?php the_permalink() ?>" class="product-item__feature-img">
                                             <img src="<?php echo $featured_img_url ?>" alt="<?php the_title() ?>"/>
                                         </a>
                                         <a href="<?php the_permalink() ?>" class="product-item__title"><?php the_title() ?></a>
-                                        <!-- <a href="<?php the_permalink() ?>" class="btn-product__detail">Xem chi tiết</a> -->
+                                        <a href="<?php the_permalink() ?>" class="btn-product__detail">Xem chi tiết</a>
                                         <div class="product-item__list-shops">
                                             Mua ngay giá tốt với
                                             <?php $customfield = get_post_custom();?>
@@ -104,6 +104,19 @@
                                                     }
                                                 ?>
 
+                                                <!-- Fresh SG -->
+                                                <?php
+                                                    if(isset($customfield['freshSG']) && get_post_meta(get_the_ID(), 'freshSG',true)) {
+                                                        ?>
+                                                    <li class="freshSG">
+                                                        <a href="<?php echo get_post_meta(get_the_ID(), 'freshSG',true); ?>"></a>
+                                                        </a>
+                                                    </li>
+                                                <?php
+
+                                                    }
+                                                ?>
+
                                                 <!-- Sendo -->
                                                 <?php
                                                    if(isset($customfield['sendo']) && get_post_meta(get_the_ID(), 'sendo',true)) {
@@ -116,6 +129,8 @@
 
                                                     }
                                                 ?>
+
+                                                
                                                 
                                             </ul>
                                         </div>
@@ -308,6 +323,21 @@
 
                                                     }
                                                 ?>
+
+                                                <!-- Vinabook -->
+                                                <?php
+                                                    if(isset($customfield['vinabook']) && get_post_meta(get_the_ID(), 'vinabook',true)) {
+                                                        ?>
+                                                    <li class="vinabook">
+                                                        <a href="<?php echo get_post_meta(get_the_ID(), 'vinabook',true); ?>"></a>
+                                                        </a>
+                                                    </li>
+                                                <?php
+
+                                                    }
+                                                ?>
+
+                                                
                                                 
                                             </ul>
                                         </div>

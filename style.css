@@ -1,9 +1,9 @@
     /*
-Theme Name: Bep Niem Vui 01
+Theme Name: Bep Niem Vui version 2.0
 Author: Bep Niem Vui 
 Author URI: https://bepniemvui.com/
 Description: Theme for food blog
-Version: 1.0
+Version: 2.0
 Text Domain: bepniemvui
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 */
@@ -11,11 +11,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     @font-face {
         font-family: 'utm-yentu';
         src: url(../bepniemvui/css/fonts/UTM\ Yen\ Tu.ttf);
-    }
-    
-    @font-face {
-        font-family: 'conthuy';
-        src: url(../bepniemvui/css/fonts/UVNConThuy.TTF);
     }
     
     @font-face {
@@ -312,6 +307,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     
     .text-on-slide {
         position: absolute;
+        width: 90%;
         top: 50%;
         left: 50%;
         padding: 20px;
@@ -320,7 +316,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         text-align: center;
         font-size: 38px;
         animation-name: animation-text-on-slide;
-        animation-duration: 3s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
     }
     
@@ -426,7 +422,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .recently-post__wrapper .item-img__wrapper {
         flex: 0 0 50px !important;
         margin-bottom: initial !important;
-        border-radius: 4px;
+        /* border-radius: 4px; */
         margin-right: 10px;
     }
     
@@ -555,7 +551,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     }
     
     .item-img__wrapper {
-        display: flex;
+        /* display: flex; */
         overflow: hidden;
     }
     
@@ -615,12 +611,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     #khoedep .item-content__wrapper,
     .page-list-all .item-content__wrapper {
         margin-left: 20px;
-    }
-    
-    #monngon .item-img__wrapper,
-    #khoedep .item-img__wrapper {
-        /* border-radius: 10px; */
-        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     }
     
     .item-content__wrapper a,
@@ -889,7 +879,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         line-height: 1.8;
     }
     
-    .post--detail__wrapper .item-title {
+    .post--detail__wrapper h1 {
         font-size: 25px;
         font-weight: 700;
         text-align: center;
@@ -968,19 +958,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         border-radius: 4px;
         border: 1px solid rgba(131, 183, 53, 1);
     }
+    
+    .sidebar__wrapper .item-title {
+        margin-top: 0;
+    }
     /* Amination */
     /* The animation code */
     
     @keyframes animation-text-on-slide {
         0% {
-            font-size: 20px;
             transform: translate(-100%, -50%);
             color: #ffffff;
-        }
-        50% {
-            font-size: 48px;
-            transform: translate(-20%, -50%);
-            color: #4d4d4d;
         }
         100% {
             transform: translate(-50%, -50%);
@@ -1018,6 +1006,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 8px;
     }
     
     .search-header__wrapper {
@@ -1156,6 +1145,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         text-overflow: ellipsis;
         margin-bottom: 8px;
         overflow: hidden;
+        padding-top: 8px;
     }
     
     .product-item__feature-img {
@@ -1185,13 +1175,28 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         font-weight: 700;
         margin-bottom: 10px;
         border-radius: 5px;
+        border: 1px solid rgba(131, 183, 53, 1);
+    }
+    
+    .btn-product__detail:hover {
+        background-color: #ffffff;
+        color: rgba(131, 183, 53, 1);
     }
     
     .product-item__list-shops {
+        font-size: 18px;
         padding: 8px;
         text-align: center;
         font-weight: 700;
         color: rgba(131, 183, 53, 1);
+    }
+    
+    .single-post .product-item__list-shops {
+        border: 1px solid rgba(131, 183, 53, 1);
+    }
+    
+    .product-detail__sale {
+        min-width: 300px;
     }
     
     .nhom-thuong-mua {
@@ -1232,6 +1237,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         display: flex;
         justify-content: center;
         margin-top: 8px;
+        transition: all 0.5s ease;
     }
     
     .list-shops a {
@@ -1239,6 +1245,11 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         height: 32px;
         width: 32px;
         margin: 5px;
+    }
+    
+    .list-shops li:hover {
+        transition: all 0.5s ease;
+        transform: scale(1.2);
     }
     
     .tiki a {
@@ -1261,6 +1272,18 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     
     .sendo a {
         background-image: url(../bepniemvui/img/sendo.jpeg);
+        background-position: center;
+        background-size: contain;
+    }
+    
+    .vinabook a {
+        background-image: url(https://bepniemvui.com/wp-content/uploads/2020/02/vinabook.png);
+        background-position: center;
+        background-size: contain;
+    }
+    
+    .freshSG a {
+        background-image: url(https://bepniemvui.com/wp-content/uploads/2020/02/freshSG.png);
         background-position: center;
         background-size: contain;
     }
@@ -1308,6 +1331,32 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
     .mobile-menu__icon {
         display: none;
     }
+    
+    #shopPage .sidebar__wrapper .main-search {
+        display: none;
+    }
+    
+    #shopPage .product-detail__wrapper {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .single-post #shopPage .tags__wrapper {
+        display: none;
+    }
+    
+    .single-post #shopPage .content__wrapper {
+        line-height: 1.8;
+    }
+    
+    .product-content--detail__wrapper {
+        margin-bottom: 20px;
+    }
+    
+    #shopPage .post--detail__wrapper h1 {
+        padding-bottom: 20px;
+        text-align: left;
+    }
     /* for ipad */
     
     @media only screen and (min-width: 1023px) and (max-width: 1365px) {
@@ -1316,6 +1365,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
         }
         .menu {
             font-size: 15px;
+            text-align: center;
         }
     }
     /* 
@@ -1415,9 +1465,6 @@ for mobile
             padding-top: 15px;
             border-top: 1px solid #4d4d4d;
         }
-        /* #searchform {
-            display: none;
-        } */
         .sidebar__border {
             padding: 0;
         }
@@ -1614,29 +1661,18 @@ for mobile
             position: fixed;
             z-index: 1;
             width: 100%;
-            /* height: 40px; */
-            top: 55px;
+            top: 52px;
             left: 0;
         }
         #breadcrumbs,
         .posted-date {
             margin-top: 12px;
         }
-        /* Animation */
-        @keyframes animation-text-on-slide {
-            0% {
-                font-size: 16px;
-                transform: translate(-100%, -50%);
-                color: #ffffff;
-            }
-            50% {
-                font-size: 20px;
-                transform: translate(-20%, -50%);
-                color: #4d4d4d;
-            }
-            100% {
-                transform: translate(-50%, -50%);
-                color: #ffffff;
-            }
+        #shopPage .product-detail__wrapper {
+            display: block;
+            text-align: center;
+        }
+        #shopPage .sidebar-content__wrapper.recently-post__wrapper .item__wrapper {
+            display: flex;
         }
     }

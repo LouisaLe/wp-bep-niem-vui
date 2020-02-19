@@ -5,6 +5,7 @@
  * @ CORE = lay duong dan thu muc core
  **/
 
+
  define('THEME_URI', get_stylesheet_directory());
  define('CORE', THEME_URI . "/core");
 

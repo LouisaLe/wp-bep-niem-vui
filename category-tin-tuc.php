@@ -17,7 +17,7 @@
         </div>
 
     <!-- Get post mặt định -->
-        <?php if (have_posts()) : ?>
+    <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="item item__wrapper">
                 <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');  ?>
